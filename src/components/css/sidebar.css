@@ -1,0 +1,191 @@
+/* Bouton toggle */
+.toggle-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #2d3748;
+  transform: scale(1.1);
+}
+
+/* Sidebar principale */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Masqué par défaut */
+  width: 250px;
+  height: 100vh;
+  background-color: #1a202c;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  box-shadow: none; /* Suppression des ombres */
+}
+
+.sidebar.open {
+  left: 0; /* Affiche la sidebar */
+  box-shadow: none; /* Aucune ombre lors de l'ouverture */
+}
+
+
+/* Overlay 
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}*/
+
+/* Logo */
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #2d3748;
+  border-bottom: 1px solid #4a5568;
+  display: flex; /* Ajoute Flexbox pour l'alignement */
+  align-items: center; /* Aligne verticalement les éléments */
+  justify-content: center; /* Centre horizontalement le contenu */
+}
+
+.sidebar-logo p {
+  display: flex; /* Aligne l'image et le texte horizontalement */
+  align-items: center; /* Aligne verticalement l'image et le texte */
+  gap: 5px; /* Ajoute un espace entre l'image et le texte */
+  margin: 0; /* Supprime le margin par défaut du <p> */
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.sidebar-logo img {
+  width: 50px; /* Taille de l'image */
+  height: 50px;
+  object-fit: contain; /* Assure que l'image garde ses proportions */
+}
+
+
+/* Menu */
+.sidebar-menu {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto; /* Ajouté pour permettre le défilement */
+  scrollbar-width: thin; /* Compatibilité Firefox */
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #cbd5e0;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu-item:hover {
+  background-color: #4a5568;
+  color: white;
+}
+
+.sidebar-menu-item.active {
+  background-color: #2d3748;
+  color: #edf2f7;
+}
+
+/* Icônes */
+.icon {
+  font-size: 1.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Scroll (pour les navigateurs basés sur WebKit, comme Chrome) */
+.sidebar-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 8px;
+}
+/* [Tous vos styles existants restent identiques jusqu'au dernier style .sidebar-menu::-webkit-scrollbar-thumb] */
+
+/* Style spécifique pour le bouton de déconnexion */
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #f56565; /* Rouge plus clair pour contraster avec le fond sombre */
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  margin-top: auto; /* Pousse le bouton vers le bas */
+  border-top: 1px solid #4a5568; /* Ligne séparatrice */
+  margin: 0.5rem 0;
+}
+
+.logout-button:hover {
+  background-color: #742a2a; /* Rouge foncé au hover */
+  color: white;
+}
+
+.logout-button .icon {
+  font-size: 1.5rem;
+}
+
+.logout-button .label {
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Ajustement du conteneur du menu pour positionner correctement le bouton de déconnexion */
+.sidebar-menu {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style pour le conteneur des items de navigation */
+.nav-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
